@@ -1,0 +1,35 @@
+@charset "UTF-8";
+$sanserif: "Montserrat","Arial","Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic Pro","Yu Gothic","YuGothic","游ゴシック","游ゴシック体","Meiryo","Meiryo UI","Osaka","MS PGothic",sans-serif;
+$handwrite: "Caveat","Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic Pro","Yu Gothic", "YuGothic","游ゴシック","游ゴシック体","Meiryo","Meiryo UI","Osaka","MS PGothic",sans-serif;
+$serif: "Noto Serif JP","Hiragino Mincho Pro","Hiragino Mincho ProN","Yu Mincho","YuMincho","游明朝","游明朝体","MS PMincho",serif;
+$maru :'Kiwi Maru', serif;
+$normal-margin : 1.075rem;
+$box-shadow : 0 0 12px rgba(0, 20, 58, 0.15);
+$link :#0066ff;
+$theme: #22c3a8;
+$attentionTheme: #2cbeb2;
+$red: #ea4343;
+$gray: #dddddd;
+
+// メディアクエリ
+$tablet: 768px;    // これ以上をタブレットとみなす
+$laptop: 1024px;   // これ以上をラップトップとみなす
+$pc: 1200px;    // これ以上をPCとみなす
+
+@mixin tablet {
+ @media screen and (min-width: ($tablet)) {
+   @content;
+ }
+}
+
+@mixin laptop {
+ @media screen and (min-width: ($laptop)) {
+   @content;
+ }
+}
+
+@mixin pc {
+ @media screen and (min-width: ($pc)) {
+   @content;
+ }
+}
