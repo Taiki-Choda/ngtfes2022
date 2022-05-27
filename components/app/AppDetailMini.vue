@@ -1,7 +1,7 @@
 <template>
     <dl class="app-detail-mini">
         <dt class="app-detail-mini__title"><app-label-box>{{title}}</app-label-box></dt>
-        <dt class="app-detail-mini__description"><slot></slot></dt>
+        <dd class="app-detail-mini__description"><slot></slot></dd>
     </dl>
 </template>
 
