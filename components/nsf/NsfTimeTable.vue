@@ -3,13 +3,13 @@
         <app-block>
             <layout-row>
                 <div class="sort__buttons">
-                    <button class="sort__date" :class="{'active':viewTab === 1}" @click="changeView(1);">5/13 Fri.</button>
-                    <button class="sort__date" :class="{'active':viewTab === 2}" @click="changeView(2);">5/14 Sat.</button>
+                    <app-tag-button :active="viewTab[0]" @clicked="changeView(0)">5/13 Fri.</app-tag-button>
+                    <app-tag-button :active="viewTab[1]" @clicked="changeView(1)">5/14 Sat.</app-tag-button>
                 </div>
             </layout-row>
             <article class="timetable-wrap">
                 <app-timetable-venue></app-timetable-venue>
-                <div class="timetable__card-wrap" :class="{'active':viewTab === 1}">
+                <div class="timetable__card-wrap" :class="{'active':viewTab[0]}">
                     <app-timetable-card
                     v-for="(show,i) in shows1"
                     :key="show.id"
@@ -22,7 +22,7 @@
                     @openModal="openModal(show)"
                     ></app-timetable-card>
                 </div>
-                <div class="timetable__card-wrap" :class="{'active':viewTab === 2}">
+                <div class="timetable__card-wrap" :class="{'active':viewTab[1]}">
                     <app-timetable-card
                     v-for="(show,n) in shows2"
                     :key="show.id"
@@ -47,7 +47,7 @@ export default {
         return {
             shows1: Array,
             shows2: Array,
-            viewTab: 3,
+            viewTab: Array,
         }
     },
     mounted() {
@@ -75,11 +75,15 @@ export default {
         });
     },
     created() {
-        this.viewTab = 2;
+        this.viewTab = [true, false,]
     },
     methods: {
         changeView(date) {
-            this.viewTab = date;
+            this.viewTab = this.viewTab.map(function(a){
+                // 一度全てfalseに
+                return false;
+            });
+            this.viewTab[date] = true;
         },
         openModal(info) {
             this.$refs.showModal.openModal(info);
