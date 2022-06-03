@@ -25,8 +25,8 @@ export default {
             // ------------------
             { property: 'og:title', content: 'WEAVE｜長田高校文化祭2022' },
             { property: 'og:type', content: 'website' },
-            { property: 'og:image', content: 'https://ngtfes.com/2022/ogp/ogp_summary.jpg' },
-            { property: 'og:url', content: 'https://www.ngtfes.com/2022/' },
+            { property: 'og:image', content: 'https://ngtfes-archive.netlify.app/ogp/ogp_summary.jpg' },
+            { property: 'og:url', content: 'https://ngtfes-archive.netlify.app/' },
             { property: 'og:description', content: '長田高校の文化祭2022は「WEAVE」がテーマ。私たち自身の無限の色が織物のように出逢い、生み出される最高の時間を共に。一縷の想いがいつか大きな帆を張って！徹底した新型コロナウイルス感染症拡大防止対策を講じて開催します。' },
             { property: 'og:site_name', content: 'WEAVE｜長田高校文化祭2022' },
             // ------------------
@@ -35,8 +35,8 @@ export default {
             { name: 'twitter:creator', content: '@ngt_fes_staff' },
             { name: 'twitter:title', content: 'WEAVE｜長田高校文化祭2022' },
             { name: 'twitter:description', content: '長田高校の文化祭2022は「WEAVE」がテーマ。私たち自身の無限の色が織物のように出逢い、生み出される最高の時間を共に。一縷の想いがいつか大きな帆を張って！徹底した新型コロナウイルス感染症拡大防止対策を講じて開催します。' },
-            { name: 'twitter:url', content: 'https://www.ngtfes.com/2022/' },
-            { name: 'twitter:image', content: 'https://ngtfes.com/2022/ogp/ogp_summary.jpg' },
+            { name: 'twitter:url', content: 'https://ngtfes-archive.netlify.app/' },
+            { name: 'twitter:image', content: 'https://ngtfes-archive.netlify.app/ogp/ogp_summary.jpg' },
         ],
         link: [
             { rel: 'shortcut icon', href: 'favicon/favicon.ico' },
@@ -89,7 +89,7 @@ export default {
     ],
 
     router: {
-        base: '/2022/'
+        base: '/'
     },
 
     sitemap: {
