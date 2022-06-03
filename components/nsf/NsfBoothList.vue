@@ -43,6 +43,6 @@ export default {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: $cards-gap;
 }
 </style>

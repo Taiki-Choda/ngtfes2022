@@ -1,6 +1,14 @@
 <template>
     <article class="card" role="button" tabindex="0" :aria-label="info.title+'についての情報'">
-        <h3 class="card__title"><span class="card__label">{{info.place}}</span>{{info.title}}</h3>
+        <h3 class="card__title">
+            <span
+                class="card__label"
+                :class="{'card__label--red':info.kind === '食品模擬','card__label--blue':info.kind === '教室模擬'}"
+            >
+            {{info.place}}
+            </span>
+            {{info.title}}
+        </h3>
         <h5 class="card__sub-info">{{info.kind}}<span class="card__slash"></span>{{info['group-name']}}</h5>
         <table v-if="info.menu.sell" class="card__table">
             <tbody>
@@ -44,23 +52,39 @@ export default {
 <style lang="scss" scoped>
 .card {
     width: 100%;
-    flex-grow: 1;
     padding: 1.85rem;
     box-shadow: $box-shadow;
     border-radius: 7px;
-    flex-basis: 250px;
+    @include tablet {
+        $card-per-row: 2;
+        width: calc(100% / $card-per-row - $cards-gap * (1 - 1 / $card-per-row));
+    }
+    @include laptop {
+        $card-per-row: 3;
+        width: calc(100% / $card-per-row - $cards-gap * (1 - 1 / $card-per-row));
+    }
+    @include pc {
+        $card-per-row: 4;
+        width: calc(100% / $card-per-row - $cards-gap * (1 - 1 / $card-per-row));
+    }
     &[role=button] {
         cursor: pointer;
     }
     &__label {
         font-size: 1rem;
-        background-image: linear-gradient(125deg, #21b7fd -10%, #29c5bb 110%);
+        background-image: linear-gradient(125deg, #fd21f9 -10%, #a15dee 110%);
         color: #fff;
         padding: 4px 10px;
         border-radius: 5px;
         margin-right: 7px;
         vertical-align: 1px;
         letter-spacing: -0.03em;
+        &--blue {
+            background-image: linear-gradient(125deg, #21b7fd -10%, #29c5bb 110%);
+        }
+        &--red {
+            background-image: linear-gradient(125deg, #fdb421 -10%, #ff9355 110%);
+        }
     }
     &__title {
         font-size: 1.1rem;
@@ -94,19 +118,17 @@ export default {
         border-radius: 5px;
         margin-top: 1.5rem;
         color: #353535;
-        line-height: 100%;
+        line-height: 120%;
         th,td {
-            padding: 12px 15px;
+            padding: 12px 10px;
         }
         th {
-            padding-left: 0;
             text-align: left;
             vertical-align: middle;
             font-weight: normal;
         }
         td {
-            padding-right: 0;
-            text-align-last: right;
+            text-align: right;
             vertical-align: middle;
         }
         tr {
