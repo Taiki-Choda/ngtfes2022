@@ -10,11 +10,12 @@ $theme: #22c3a8;
 $attentionTheme: #2cbeb2;
 $red: #ea4343;
 $gray: #dddddd;
+$cards-gap: 2rem;
 
 // メディアクエリ
-$tablet: 768px;    // これ以上をタブレットとみなす
-$laptop: 1024px;   // これ以上をラップトップとみなす
-$pc: 1200px;    // これ以上をPCとみなす
+$tablet: 767px;    // これ以上をタブレットとみなす
+$laptop: 1023px;   // これ以上をラップトップとみなす
+$pc: 1199px;    // これ以上をPCとみなす
 
 @mixin tablet {
  @media screen and (min-width: ($tablet)) {
