@@ -18,7 +18,7 @@
         <!--  -->
         <app-block>
             <layout-button-center>
-                <app-button-ring link="/2022/public/timetable_2022_03.pdf" desc="PDFで見る" type="outer"></app-button-ring>
+                <app-button-ring link="/public/timetable_2022_03.pdf" desc="PDFで見る" type="outer"></app-button-ring>
             </layout-button-center>
         </app-block>
     </layout-wrap-main>

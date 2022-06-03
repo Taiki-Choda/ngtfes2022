@@ -8,7 +8,7 @@
                 <div ref="map" class="map__image" :style="styleObject()"></div>
             </div>
             <p class="page-link">
-                <a href="/2022/public/map_2022_01.pdf" target="_blank" rel="noopener noreferrer">PDFで見る ></a>
+                <a href="/public/map_2022_01.pdf" target="_blank" rel="noopener noreferrer">PDFで見る ></a>
             </p>
             <input v-model="scale" class="scale-input" type="range" min="0.65" max="2" step="0.005">
         </app-block-normal>

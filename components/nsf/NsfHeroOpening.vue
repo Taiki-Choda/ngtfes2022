@@ -2,7 +2,7 @@
     <div class="hero-opening" :data-video-finish="videoStmt">
         <div class="video-container">
             <video ref="video" playsinline webkit-playsinline class="hero-opening__video" :poster="require('@/assets/images/thumbnail_01.png')" preload="auto" muted @loadedmetadata="videoStart" @ended="videoEnded">
-                <source src="/2022/assets/videos/top-feature-logo.mp4">
+                <source src="/assets/videos/top-feature-logo.mp4">
             </video>
         </div>
         <img
