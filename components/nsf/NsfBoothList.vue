@@ -23,7 +23,7 @@ export default {
     }
   },
   mounted () {
-    this.$axios.get('/2022/api/booth.json').then((response) => {
+    this.$axios.get('/api/booth.json').then((response) => {
         //  取得できたら、Dataに入れる
         this.booths = JSON.parse(JSON.stringify(response.data));
       }).catch(() => {

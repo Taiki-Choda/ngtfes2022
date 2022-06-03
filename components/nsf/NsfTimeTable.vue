@@ -51,7 +51,7 @@ export default {
         }
     },
     mounted() {
-        this.$axios.get('/2022/api/stage.json').then((response) => {
+        this.$axios.get('/api/stage.json').then((response) => {
             const day1 = [];
             const day2 = [];
             //  取得できたら、res

@@ -72,7 +72,7 @@ export default {
                 const res = hour * 60 + min;
                 return res;
             }
-            this.$axios.get('/2022/api/stage.json').then((response) => {
+            this.$axios.get('/api/stage.json').then((response) => {
                 const res = response.data;
                 res.forEach(showInfo => {
                     const show = JSON.parse(JSON.stringify(showInfo));
