@@ -1,7 +1,7 @@
 <template>
     <layout-wrap-main spacer="bottom">
         <div class="home-hero">
-            <img class="home-hero__img" src="@/assets/images/top_01.png" alt="長田高校文化祭2022・WEAVE">
+            <img class="home-hero__img" src="@/assets/images/top_01.png" alt="長田高校文化祭2022・WEAVE" width="1240" height="997">
         </div>
         <nsf-concept-block>
             <p>私たちの世界に同じなんてない。まだ見ぬ世界に手を伸ばし、まだ見ぬ輝きと出会うんだ。無限の色が織りなす、かけがえのない瞬間を共に。一縷の想いがいつか大きな帆を張って__</p>
