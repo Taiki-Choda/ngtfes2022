@@ -10,7 +10,7 @@
             </nav>
             <section class="nsf-footer__caption">
                 <nuxt-link  class="nsf-footer__logo" to="/">
-                    <img alt="Vue logo" src="@/assets/images/logo/main_black.svg">
+                    <img alt="Vue logo" src="@/assets/images/logo/main_black.svg" width="192" height="172">
                 </nuxt-link>
                 <p class="nsf-footer__title">長田高校文化祭<span class="half-width-fit">2022</span><br>WEAVE</p>
             </section>
