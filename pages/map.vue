@@ -5,7 +5,7 @@
         </app-page-title>
         <app-block-normal>
             <div class="map">
-                <div class="map__image" :style="styleObject()"></div>
+                <div ref="map" class="map__image" :style="styleObject()"></div>
             </div>
             <p class="page-link">
                 <a href="/2022/public/map_2022_01.pdf" target="_blank" rel="noopener noreferrer">PDFで見る ></a>
@@ -24,6 +24,7 @@ export default {
     data() {
         return {
             scale: 1,
+            mapWidth: 0,
         }
     },
     head() {
@@ -37,6 +38,11 @@ export default {
     methods: {
         styleObject() {
             const scale = this.scale;
+            // if (this.$refs.map) {
+            //     if (this.$refs.map.getBoundingClientRect().width > 300) {
+                    // TODO:画面幅に応じて拡大率を最適化したい
+            //     }
+            // }
             const style = {
                 transform: `scale(${scale})`,
                 margin: `calc(-140vw * ${(1 - scale)} / 2) calc(-210vw * ${(1 - scale)} / 2)`
