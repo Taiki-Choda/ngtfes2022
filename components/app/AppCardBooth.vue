@@ -10,14 +10,7 @@
             {{info.title}}
         </h3>
         <h5 class="card__sub-info">{{info.kind}}<span class="card__slash"></span>{{info['group-name']}}</h5>
-        <table v-if="info.menu.sell" class="card__table">
-            <tbody>
-                <tr v-for="(i,index) in info.menu.item" :key="index">
-                    <th>{{i.name}}<br><span v-if="i.description !== ''" class="card__table-desc">{{i.description}}</span></th>
-                    <td>¥{{i.price}}</td>
-                </tr>
-            </tbody>
-        </table>
+        <app-price-table v-if="info.menu.sell" :items="info.menu.item"></app-price-table>
         <app-text-area v-else>
             <p class="card__desc">{{cutText(info['copy-60'])}}</p>
         </app-text-area>

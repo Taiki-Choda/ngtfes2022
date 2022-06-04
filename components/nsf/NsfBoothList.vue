@@ -10,7 +10,7 @@
         <div class="card-wrap">
             <app-card-booth v-for="(booth,index) in booths" :key="index" :info="booth" @click.native="openModal(booth);"></app-card-booth>
         </div>
-        <app-modal ref="boothModal"></app-modal>
+        <app-modal ref="boothModal" type="booth"></app-modal>
     </app-block-normal>
 </template>
 
