@@ -4,9 +4,7 @@
             <span
                 class="card__label"
                 :class="{'card__label--red':info.kind === '食品模擬','card__label--blue':info.kind === '教室模擬'}"
-            >
-            {{info.place}}
-            </span>
+            >{{info.place}}</span>
             {{info.title}}
         </h3>
         <h5 class="card__sub-info">{{info.kind}}<span class="card__slash"></span>{{info['group-name']}}</h5>
@@ -65,7 +63,7 @@ export default {
     }
     &__label {
         font-size: 1rem;
-        background-image: linear-gradient(125deg, #fd21f9 -10%, #a15dee 110%);
+        background-image: linear-gradient(125deg, #fd21f9 -10%, #b95dee 110%);
         color: #fff;
         padding: 4px 10px;
         border-radius: 5px;
