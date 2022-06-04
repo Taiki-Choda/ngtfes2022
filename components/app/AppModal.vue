@@ -1,15 +1,17 @@
 <template>
     <div class="modal" :class="{'active':stmt === 'open','close':stmt === 'close','animating':stmt === 'animating'}">
         <div class="modal__inner">
-            <app-close-button @click.native="closeModal"></app-close-button>
             <article class="modal__content">
-                <app-title :title="info['copy-20']"></app-title>
+                <app-title v-if="type==='booth'" :title="info['title']"></app-title>
+                <app-title v-else :title="info['group-name']"></app-title>
                 <app-text-area>
                     <p v-html="info['copy-60']"></p>
                     <!-- <p v-html="info['copy-100']"></p> -->
                 </app-text-area>
+                <app-price-table v-if="info.menu && info.menu.sell" :items="info.menu.item"></app-price-table>
             </article>
         </div>
+        <app-close-button @click.native="closeModal"></app-close-button>
         <div class="modal__overlay" @click="closeModal"></div>
     </div>
 </template>
@@ -17,6 +19,10 @@
 <script>
 export default {
     props: {
+        type: {
+            type: String,
+            default: "booth",
+        }
     },
     data(){
         return {
@@ -114,9 +120,16 @@ export default {
         }
     }
 }
+.active {
+    .close-button {
+        opacity: 1;
+    }
+}
 .close-button {
     position: absolute !important;
     top: 5%;
     right: 5%;
+    opacity: 0;
+    transition: opacity 0.3s ease 0s;
 }
 </style>
