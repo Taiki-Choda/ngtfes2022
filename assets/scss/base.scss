@@ -96,8 +96,15 @@ input,select {
 label {
     cursor: pointer
 }
-:focus {
-    outline: none;
+/* マウスクリック時 */
+:focus:not(:fous-visible) {
+	outline: none;
+}
+/* タブ移動時 */
+:focus-visible {
+	outline: 3px solid #127bf4;
+    outline-offset: 3px;
+    border-radius: 3px;
 }
 ::selection {
     background: rgba(0, 0, 0, 0.1);
