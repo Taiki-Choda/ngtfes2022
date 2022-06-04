@@ -6,7 +6,7 @@
             <p>無数の糸から生み出される織物のように、たくさんの個性に溢れた、それぞれの「糸」が繋がり合い、響き合い、そして未だ目にしたことのない深みある感動に包まれる時間、それが「WEAVE（読み：ウィーブ）」です。</p>
         </nsf-concept-block>
         <div style="background:#fff; margin-top:-6rem;">
-            <app-block-spacer></app-block-spacer>
+            <layout-block-spacer></layout-block-spacer>
             <app-block-normal style="margin:0;">
                 <app-heading-cool title="安全な開催に向けて" sub="Health Safety"></app-heading-cool>
                 <app-text-area>
