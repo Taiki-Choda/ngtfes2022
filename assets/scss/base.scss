@@ -1,6 +1,6 @@
 @charset "UTF-8";
 html {
-    font-size: 14px;
+    font-size: 15px;
     @include laptop {
         font-size: 16.5px;
     }
@@ -74,6 +74,7 @@ th,td {
     border-spacing: 0;
 }
 button {
+    font-size: 100%;
     padding: 0;
     background-color: transparent;
     border: none;
@@ -85,6 +86,7 @@ input,select {
     background-color: transparent;
     border-radius: 0;
     font-weight: normal;
+    font-size: 100%;
     color: #000000;
     cursor: pointer;
 }
