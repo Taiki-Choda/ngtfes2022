@@ -37,7 +37,7 @@
                 </div>
             </article>
         </app-block>
-        <app-modal ref="showModal"></app-modal>
+        <app-modal ref="showModal" type="stage"></app-modal>
     </article>
 </template>
 
