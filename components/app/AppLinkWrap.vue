@@ -1,6 +1,6 @@
 <template>
-    <nuxt-link v-if="type === 'domestic'" class="wrap-link" :to="link" aria-hidden="true">{{name}}</nuxt-link>
-    <a v-else class="wrap-link" :href="link" target="_blank" rel="noopener noreferrer" aria-hidden="true">{{name}}</a>
+    <nuxt-link v-if="type === 'domestic'" class="wrap-link" :to="link" aria-hidden="true" tabindex="-1">{{name}}</nuxt-link>
+    <a v-else class="wrap-link" :href="link" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">{{name}}</a>
 </template>
 
 <script>

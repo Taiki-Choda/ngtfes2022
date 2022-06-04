@@ -1,7 +1,7 @@
 <template>
     <app-block class="pickup">
-        <div v-for="(link,index) in links" :key="index" class="pickup__button" role="link" tabindex="0" :aria-label="link.title+'を見る'">
-            <h3 class="pickup__button-title">{{link.title}}</h3>
+        <div v-for="(link,index) in links" :key="index" class="pickup__button" :aria-label="link.title+'を見る'">
+            <div class="pickup__button-title">{{link.title}}</div>
             <nuxt-link class="pickup__button-link" :to="link.to"></nuxt-link>
         </div>
     </app-block>
@@ -48,6 +48,7 @@
     flex-wrap: wrap;
     gap: 1rem 1.5rem;
     &__button {
+        display: block;
         position: relative;
         width: calc(50% - 0.75rem);
         border-radius: 7px;
