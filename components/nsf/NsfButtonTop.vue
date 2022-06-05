@@ -1,16 +1,15 @@
 <template>
-    <div
+    <button
       class="scroll-top-button"
       :class="{'scroll-top-button--hide':firstTime,'scroll-top-button--unshown':!muchScrolled,}"
       aria-label="ページ最上部までスクロール"
-      role="button"
       tabindex="0"
       @click="scrollToTop()"
     >
         <!--  -->
         <div class="arrow-icon"></div>
         <!--  -->
-    </div>
+    </button>
 </template>
 
 <script>

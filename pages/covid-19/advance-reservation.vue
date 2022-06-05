@@ -139,7 +139,7 @@
     </app-heading-block>
     <app-heading-block title="よくあるご質問">
         <p>お問合せ前に以下の内容をご確認ください。</p>
-        <app-faq-accordion :content="faqContent"></app-faq-accordion>
+        <app-accordion-list :content="faqContent"></app-accordion-list>
     </app-heading-block>
     <app-heading-block title="専用サイトはこちら">
         <layout-button-center style="padding-top: 1rem;">

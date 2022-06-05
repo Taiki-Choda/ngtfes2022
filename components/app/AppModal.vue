@@ -11,7 +11,7 @@
                 <app-price-table v-if="info.menu && info.menu.sell" :items="info.menu.item"></app-price-table>
             </article>
         </div>
-        <app-close-button @click.native="closeModal"></app-close-button>
+        <app-close-button :tabindex="tabindex" @click.native="closeModal"></app-close-button>
         <div class="modal__overlay" @click="closeModal"></div>
     </div>
 </template>
@@ -28,21 +28,25 @@ export default {
         return {
             stmt: 'close',
             info: Object,
+            tabindex: -1,
         }
     },
     methods: {
         openModal(info) {
             this.stmt = 'open';
             this.info = info;
+            this.tabindex = 0;
             this.$noScroll();
         },
         closeModal() {
+            this.tabindex = -1;
             this.stmt = 'animating';
             setTimeout(() => {
                 this.stmt = 'close';
                 this.info = {};
             }, 750);
             this.$returnScroll();
+            this.$emit('modalClose');
         },
 
     }
