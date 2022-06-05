@@ -1,6 +1,6 @@
 <template>
     <article>
-        <app-block>
+        <app-block :aria-hidden="ariaHidden">
             <layout-row>
                 <div class="sort__buttons">
                     <app-tag-button :active="viewTab[0]" @clicked="changeView(0)">5/13 Fri.</app-tag-button>
@@ -19,6 +19,7 @@
                     :name="show['group-name']"
                     :start="show.hours.start"
                     :end="show.hours.end"
+                    :tabindex="tabindex"
                     @openModal="openModal(show)"
                     ></app-timetable-card>
                 </div>
@@ -32,12 +33,13 @@
                     :name="show['group-name']"
                     :start="show.hours.start"
                     :end="show.hours.end"
+                    :tabindex="tabindex"
                     @openModal="openModal(show)"
                     ></app-timetable-card>
                 </div>
             </article>
         </app-block>
-        <app-modal ref="showModal" type="stage"></app-modal>
+        <app-modal ref="showModal" type="stage" @modalClose="modalClose"></app-modal>
     </article>
 </template>
 
@@ -48,6 +50,8 @@ export default {
             shows1: Array,
             shows2: Array,
             viewTab: Array,
+            ariaHidden: false,
+            tabindex: 0,
         }
     },
     mounted() {
@@ -87,6 +91,13 @@ export default {
         },
         openModal(info) {
             this.$refs.showModal.openModal(info);
+
+            this.ariaHidden = true;
+            this.tabindex = -1;
+        },
+        modalClose() {
+            this.ariaHidden = false;
+            this.tabindex = 0;
         },
         sort(array) {
             array.sort((a,b) => {

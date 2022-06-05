@@ -7,10 +7,10 @@
                 <button class="sort__date" :class="{'active':viewTab === 3}" @click="changeView(3);">展示</button>
             </div>
         </layout-row> -->
-        <div class="card-wrap">
-            <app-card-booth v-for="(booth,index) in booths" :key="index" :info="booth" @click.native="openModal(booth);"></app-card-booth>
+        <div class="card-wrap" :aria-hidden="ariaHidden">
+            <app-card-booth v-for="(booth,index) in booths" :key="index" :tabindex="tabindex" :info="booth" @click.native="openModal(booth)" @keypress.native.enter="openModal(booth)"></app-card-booth>
         </div>
-        <app-modal ref="boothModal" type="booth"></app-modal>
+        <app-modal ref="boothModal" type="booth" @modalClose="modalClose"></app-modal>
     </app-block-normal>
 </template>
 
@@ -20,6 +20,8 @@ export default {
     return {
       booths: [],
       viewTab: 0,
+      ariaHidden: false,
+      tabindex: 0,
     }
   },
   mounted () {
@@ -33,6 +35,12 @@ export default {
   methods: {
     openModal(info) {
         this.$refs.boothModal.openModal(info);
+        this.ariaHidden = true;
+        this.tabindex = -1;
+    },
+    modalClose() {
+        this.ariaHidden = false;
+        this.tabindex = 0;
     }
   }
 }

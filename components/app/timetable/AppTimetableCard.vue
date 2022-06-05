@@ -5,9 +5,10 @@
         :class="{'timetable-card--left':venue === '講堂','timetable-card--right':venue ==='野外'}"
         :style="styleObject"
         role="button"
-        tabindex="0"
+        :tabindex="tabindex"
         :aria-label="name"
-        @click="openModal()"
+        @click="openModal"
+        @keypress.enter="openModal"
         >
             <div
             class="timetable-card__kind"
@@ -51,6 +52,10 @@ export default {
         end: {
             type: String,
             default: '10:00',
+        },
+        tabindex: {
+            type: String,
+            default: "0",
         }
     },
     data(){
