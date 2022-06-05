@@ -1,8 +1,8 @@
 <template>
-    <div class="close-button" role="button" tabindex="0">
+    <button class="close-button" role="button" tabindex="0" aria-label="モーダルウィンドウを閉じる">
         <span class="close-button__line"></span>
         <span class="close-button__line"></span>
-    </div>
+    </button>
 </template>
 
 <script>

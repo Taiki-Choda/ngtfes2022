@@ -1,4 +1,4 @@
-<template comments>
+<template>
     <layout-wrap-main>
         <app-page-title title="サイトのご利用について"></app-page-title>
         <app-heading-block title='サイト利用規約'>

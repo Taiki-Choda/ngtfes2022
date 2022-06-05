@@ -21,7 +21,7 @@
                 <span class="header-btn__line"></span>
             </div>
         </button>
-        <nav class="header-nav">
+        <nav class="header-nav" :aria-hidden="!headerStmt">
             <div class="header-nav__container">
                 <div class="header-nav__background"></div>
                 <ul style="margin-bottom: 2.5rem">
@@ -79,14 +79,14 @@
                         name: '入場予約について'
                     },
                 ],
-                headerStmt: "false",
+                headerStmt: false,
                 helperOpenClose: "ヘッダーメニューを開く",
             }
         },
         destroyed() {
             const currentStmt = this.$refs.headerWrap.dataset.navOpen;
             if (currentStmt === "true") {
-                this.headerStmt = "false";
+                this.headerStmt = false;
                 this.helperOpenClose = "ヘッダーメニューを開く";
             }
         },
@@ -94,10 +94,10 @@
             headerOpenClose() {
                 const currentStmt = this.$refs.headerWrap.dataset.navOpen;
                 if (currentStmt === "true") {
-                    this.headerStmt = "false";
+                    this.headerStmt = false;
                     this.helperOpenClose = "ヘッダーメニューを開く";
                 } else {
-                    this.headerStmt = "true";
+                    this.headerStmt = true;
                     this.helperOpenClose = "ヘッダーメニューを閉じる";
                 }
             }

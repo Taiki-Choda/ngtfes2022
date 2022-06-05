@@ -1,8 +1,6 @@
 <template>
-<div class="app-button-ring" role="button" tabindex="0" :aria-label="desc">
-    {{desc}}
-    <app-link-wrap :link="link" :name="desc" :type="type"></app-link-wrap>
-</div>
+    <nuxt-link v-if="type === 'domestic'" class="app-button-ring" :to="link">{{desc}}</nuxt-link>
+    <a v-else class="app-button-ring" :href="link" target="_blank" rel="noopener noreferrer">{{desc}}</a>
 </template>
 
 <script>
